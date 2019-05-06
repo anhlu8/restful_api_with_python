@@ -7,14 +7,14 @@ consumes:
   - "application/json"
 produces:
   - "application/json"
-basePath: "/api"
+basePath: "/api" #The root of the URL endpoint
 # Paths supported by the server application
 paths:
-  /people:
-    get:
-      operationId: "people.read"
-      tags:
-        - "People"
+  /people: #URL endpoint: /api/people
+    get: #HTTP GET request
+      operationId: "people.read" #defines the Python import path/function that will respond to an HTTP GET /api/people request (people module and the read function).
+      tags: #defines a grouping for the UI interface.
+        - "People" #All the CRUD methods you’ll define for the people endpoint will share this tag definition.
       summary: "The people data structure supported by the server application"
       description: "Read the list of people"
       responses:
